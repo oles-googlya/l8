@@ -34,9 +34,9 @@
       src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
       dst: /tmp/
 
-  - name: prepare prod
-    hosts: prod
-    become: yes
+- name: prepare prod
+  hosts: prod
+  become: yes
 
   tasks:
   - name: Ensure curl tomcat present
