@@ -31,6 +31,7 @@
 
   - name: Copying an artifact to /tmp
     copy:
+      delegate_to: localhost
       src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
       dest: /tmp/hello-1.0.war
       
