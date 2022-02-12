@@ -40,8 +40,8 @@
 
   tasks:
   - name: Ensure tomcat is present
-    name: tomcat9
-    state: present
+      name: tomcat9
+      state: present
 
   - name: Ensure tomcat is started
     service:
