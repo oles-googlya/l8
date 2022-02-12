@@ -1,0 +1,26 @@
+---
+- name: prepare build
+  hosts: build
+  become: yes
+
+  tasks:
+  - name: Ensure jdk is present
+    apt:
+      name: default-jdk
+      state: present
+
+  - name: Ensure maven is present
+    apt:
+      name: maven
+      state: present
+  
+  - name: Ensure git is present
+    apt:
+      name: git
+      state: present
+
+  - name: Cloning the repo
+      command: git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+        chdir: /home/user/
+        
+
