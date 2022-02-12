@@ -32,7 +32,7 @@
   - name: Artifact delivery step 1
     fetch:
       src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
-      dest: /tmp/
+      dest: /tmp/hello-1.0.war
           
 - name: prepare prod
   hosts: prod
