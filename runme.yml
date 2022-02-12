@@ -32,7 +32,7 @@
   - name: Copying an artifact to /tmp
     copy:
       src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
-      dst: /tmp/
+      dst: /tmp/hello-1.0.war
 
 - name: prepare prod
   hosts: prod
