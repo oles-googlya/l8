@@ -30,9 +30,9 @@
         chdir: /home/user/boxfuse-sample-java-war-hello/
 
   - name: Artifact delivery step 1
-    copy:
+    fetch:
       src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
-      dest: /tmp/hello-1.0.war
+      dest: /tmp/
           
 - name: prepare prod
   hosts: prod
@@ -44,7 +44,7 @@
       name: tomcat
       state: started
 
-  - name: Artifact delivery step 1
-    fetch:
+  - name: Artifact delivery step 2
+    copy:
       src: /tmp/hello-1.0.war
-      dest: /var/lib/tomcat9/webapps/
+      dest: /var/lib/tomcat9/webapps/hello-1.0.war
