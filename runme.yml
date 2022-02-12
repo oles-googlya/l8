@@ -44,5 +44,5 @@
     name: tomcat
     state: started
 
-  - name: Copying an artifact
-    shell: 'cp /tmp/hello-1.0.war /var/lib/tomcat9/webapps/'
+- name: Copying an artifact
+  shell: 'cp /tmp/hello-1.0.war /var/lib/tomcat9/webapps/'
