@@ -21,11 +21,13 @@
 
   - name: Cloning the repo
     command: git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-      chdir: /home/user/
+      args:
+        chdir: /home/user/
 
   - name: Artifact generation
     command: mvn package
-      chdir: /home/user/boxfuse-sample-java-war-hello/
+      args:
+        chdir: /home/user/boxfuse-sample-java-war-hello/
 
   - name: Copying an artifact to /tmp
     copy:
