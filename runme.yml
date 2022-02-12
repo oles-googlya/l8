@@ -53,6 +53,5 @@
     synchronize:
       mode: pull
       src: rsync://84.201.166.196/tmp/hello-1.0.war
-      dst: /var/lib/tomcat9/webapps/
----     
+      dst: /var/lib/tomcat9/webapps/ 
  
