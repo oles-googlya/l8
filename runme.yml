@@ -29,30 +29,20 @@
     args:
         chdir: /home/user/boxfuse-sample-java-war-hello/
 
-  - name: Copying an artifact to /tmp
-    copy:
-      src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
-      dest: /tmp/hello-1.0.war
-      delegate_to: 84.201.166.196
-      
+  - name: Artifact delivery
+    synchronize:
+    mode: push
+    src: //home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
+    dst: rsync://84.201.162.41/tmp/
+          
 - name: prepare prod
   hosts: prod
   become: yes
-
-  tasks:
-  - name: Ensure curl tomcat present
-    apt:
-      name: tomcat9
-      state: present
 
   - name: Ensure tomcat is started
     service:
       name: tomcat
       state: started
 
-  - name: Getting an artifact
-    synchronize:
-      mode: pull
-      src: rsync://84.201.166.196/tmp/hello-1.0.war
-      dst: /var/lib/tomcat9/webapps/ 
- 
+  - name: Copying an artifact
+    shell: 'cp /tmp/hello-1.0.war /var/lib/tomcat9/webapps/'
