@@ -33,6 +33,9 @@
     copy:
       src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
       dst: /tmp/hello-1.0.war
+      owner: root
+      group: foo
+      mode: u=rw,g=rw,o=rw
 
 - name: prepare prod
   hosts: prod
