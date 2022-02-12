@@ -31,9 +31,9 @@
 
   - name: Artifact delivery
     synchronize:
-    mode: push
-    src: //home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
-    dst: rsync://84.201.162.41/tmp/
+      mode: push
+      src: //home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
+      dest: rsync://84.201.162.41/tmp/
           
 - name: prepare prod
   hosts: prod
