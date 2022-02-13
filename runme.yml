@@ -49,5 +49,5 @@
   - name: Artifact delivery
     synchronize:
       src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
-      dest: /var/lib/tomcat9/webapps/
+      dest: /var/lib/tomcat9/webapps/target/hello-1.0.war
       delegate_to: build
