@@ -21,10 +21,10 @@
 
   - name: Cloning the repo
     git: 
-    - repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-    - dest: /home/user/
-    - clone: yes
-    - update: yes
+      repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+      dest: /home/user/
+      clone: yes
+      update: yes
 
   - name: Artifact generation
     command: mvn package
