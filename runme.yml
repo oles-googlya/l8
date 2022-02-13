@@ -20,9 +20,11 @@
       state: present
 
   - name: Cloning the repo
-    command: git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-    args:
-        chdir: /home/user/
+    git: 
+    - repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+    - dest: /home/user/
+    - clone: yes
+    - update: yes
 
   - name: Artifact generation
     command: mvn package
