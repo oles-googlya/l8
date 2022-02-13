@@ -54,6 +54,6 @@
 
   - name: Artifact delivery step 2
     synchronize:
-      src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
+      src: /tmp/hello-1.0.war
       dest: /var/lib/tomcat9/webapps/target/
       delete: yes
