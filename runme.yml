@@ -55,5 +55,5 @@
   - name: Artifact delivery step 2
     synchronize:
       src: /tmp/hello-1.0.war
-      dest: /var/lib/tomcat9/webapps/target/
+      dest: /var/lib/tomcat9/webapps/
       delete: yes
