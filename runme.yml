@@ -30,6 +30,12 @@
     command: mvn package
     args:
         chdir: /home/user/boxfuse-sample-java-war-hello/
+
+  - name: Artifact delivery step 1
+    synchronize:
+      mode: pull
+      src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
+      dest: /tmp/
           
 - name: prepare prod
   hosts: prod
@@ -46,10 +52,8 @@
       name: tomcat9
       state: started
 
-  - name: Artifact delivery
+  - name: Artifact delivery step 2
     synchronize:
-      mode: push
       src: /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war
-      dest: rsync://84.201.162.41/var/lib/tomcat9/webapps/target/hello-1.0.war
+      dest: /var/lib/tomcat9/webapps/target/
       delete: yes
-      delegate_to: 84.201.166.196
